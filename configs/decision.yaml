@@ -1,0 +1,35 @@
+data:
+  train_data: data/decision_corpus/train.jsonl
+  max_seq_len: 1024
+  max_options: 6
+
+training:
+  microbatch_size: 4
+  grad_accum_steps: 4
+  epochs: 2
+  seed: 42
+  log_every: 20
+
+optimization:
+  backbone_lr: 0.0001
+  head_lr: 0.0005
+  backbone_weight_decay: 0.0
+  head_weight_decay: 0.0
+  muon_momentum: 0.95
+  muon_ns_steps: 5
+  warmup_ratio: 0.05
+  min_lr_ratio: 0.1
+  max_grad_norm: 1.0
+
+validation:
+  eval_datasets:
+    in_domain: data/decision_corpus/eval_in_domain.jsonl
+    synthetic: data/decision_corpus/eval_synthetic.jsonl
+    transfer_jcola: data/decision_corpus/eval_transfer_jcola.jsonl
+  eval_batch_size: 8
+  eval_every: 250
+
+checkpoint:
+  pretrained_checkpoint: checkpoints/step_00049999
+  output_dir: decision_checkpoints
+  resume_checkpoint: null

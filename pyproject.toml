@@ -1,0 +1,30 @@
+[project]
+name = "looped-decision-jp"
+version = "0.1.0"
+description = "Japanese tailored decision model inspired by Jev"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=5.0.1",
+    "flax>=0.12.8",
+    "jax[cuda13]>=0.10.2",
+    "optax>=0.2.8",
+    "orbax-checkpoint>=0.12.4",
+    "pyyaml>=6.0.3",
+    "pytest>=9.1.1",
+    "sentencepiece>=0.2.2",
+    "transformers>=5.17.0",
+    "openai>=3.16.2",
+    "pydantic>=2.13.5",
+    "matplotlib>=3.11.2",
+]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "ruff>=0.16.7",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

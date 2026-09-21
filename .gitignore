@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# checkpoints
+checkpoints/
+decision_checkpoints/
+
+# tools
+.ruff_cache
+.pytest_cache
+
+# external data
+data/external/
+
+# generated training and evaluation data
+data/synthetic_decisions/
+data/decision_corpus/
+
+# tests
+tests/
+
+# Scripts
+scripts/

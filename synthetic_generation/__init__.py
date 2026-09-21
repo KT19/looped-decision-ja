@@ -1,0 +1,2 @@
+"""Synthetic decision-data generation."""
+

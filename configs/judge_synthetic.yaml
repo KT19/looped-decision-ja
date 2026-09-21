@@ -1,0 +1,16 @@
+judge:
+  input_path: data/synthetic_decisions/raw.jsonl
+  output_path: data/synthetic_decisions/judged.jsonl
+  failed_path: data/synthetic_decisions/judge_failed.jsonl
+  stats_path: data/synthetic_decisions/judge_stats.json
+  base_url: http://127.0.0.1:11434/v1
+  api_key: ollama
+  model: gemma4:26b
+  votes: 5
+  request_concurrency: 5
+  temperature: 1.1
+  think: false
+  seed: 12345
+  max_retries: 3
+  max_completion_tokens: 128
+  request_timeout: 60.0

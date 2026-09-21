@@ -1,0 +1,64 @@
+model:
+  vocab_size: 50570
+  d_model: 768
+  n_heads: 16
+  n_kv_heads: 4
+  d_ff: 3072
+  max_seq_len: 1024
+
+moe:
+  n_experts: 4
+  top_k: 2
+  router_aux_loss_coef: 0.01
+  router_z_loss_coef: 0.001
+  capacity_factor: 1.25
+
+recurrent_depth:
+  n_loops: 2
+  n_core_blocks: 2
+  loop_residual_scale: null
+  depth_embedding_scale: 0.1
+
+training:
+  batch_size: 4
+  seq_len: 1024
+  steps: 50000
+  grad_accum_steps: 4
+  learning_rate: 0.001
+  weight_decay: 0.01
+  seed: 42
+
+muon:
+  muon_momentum: 0.95
+  muon_ns_steps: 5
+
+data:
+  tokenizer_name: llm-jp/llm-jp-13b-v1.0
+  dataset_name: hotchpotch/fineweb-2-edu-japanese
+  dataset_config: sample_10BT
+  shuffle_buffer: 10000
+
+validation:
+  val_split: test
+  val_batches: 16
+  eval_every: 100
+
+checkpoint:
+  checkpoint_dir: checkpoints
+  checkpoint_every: 2000
+  keep_checkpoints: 2
+  resume: false
+
+optimization_schedule:
+  warmup_steps: 1000
+  min_learning_rate: 0.0003
+  max_grad_norm: 1.0
+
+generation:
+  sample_every: 500
+  sample_max_new_tokens: 128
+  sample_temperature: 0.8
+  sample_top_k: 40
+  sample_prompts:
+    - これからの人工知能の未来は
+    - 大規模言語モデルとは

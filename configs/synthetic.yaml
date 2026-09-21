@@ -1,0 +1,11 @@
+generator:
+  base_url: http://127.0.0.1:11434/v1
+  model: gemma4:26b
+  api_key: ollama
+  output_dir: data/synthetic_decisions
+  target_count: 2000
+  questions_per_state: 4
+  concurrency: 2
+  temperature: 0.9
+  think: false
+  seed: 42
